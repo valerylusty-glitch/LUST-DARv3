@@ -1,0 +1,109 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+GREEN='\033[1;32m'
+NC='\033[0m'
+
+banner() {
+clear
+echo -e "${GREEN}"
+echo "██╗     ██╗   ██╗███████╗████████╗"
+echo "██║     ██║   ██║██╔════╝╚══██╔══╝"
+echo "██║     ██║   ██║███████╗   ██║"
+echo "██║     ██║   ██║╚════██║   ██║"
+echo "███████╗╚██████╔╝███████║   ██║"
+echo "╚══════╝ ╚═════╝ ╚══════╝   ╚═╝"
+echo ""
+echo "      LUST DARK SUITE V3"
+echo "      SECURITY TERMINAL"
+echo "================================"
+echo -e "${NC}"
+}
+
+pause() {
+read -p "PRESS ENTER TO CONTINUE..."
+}
+
+system_info() {
+banner
+echo -e "${GREEN}[SYSTEM INFORMATION]"
+uname -a
+echo
+df -h
+echo
+free -h 2>/dev/null || echo "MEMORY INFO NOT AVAILABLE"
+echo -e "${NC}"
+pause
+}
+
+network_info() {
+banner
+echo -e "${GREEN}[NETWORK INFORMATION]"
+ip addr 2>/dev/null || ifconfig
+echo -e "${NC}"
+pause
+}
+
+public_ip() {
+banner
+echo -e "${GREEN}[PUBLIC IP]"
+curl -s https://api.ipify.org
+echo
+echo -e "${NC}"
+pause
+}
+
+ping_test() {
+banner
+read -p "HOST OR IP: " host
+ping -c 4 "$host"
+pause
+}
+
+dns_lookup() {
+banner
+read -p "DOMAIN: " domain
+nslookup "$domain"
+pause
+}
+
+file_hash() {
+banner
+read -p "FILE PATH: " file
+sha256sum "$file"
+pause
+}
+
+process_view() {
+banner
+ps -A
+pause
+}
+
+while true
+do
+banner
+
+echo -e "${GREEN}[01] SYSTEM INFORMATION"
+echo "[02] NETWORK INFORMATION"
+echo "[03] PUBLIC IP CHECK"
+echo "[04] CONNECTION TEST"
+echo "[05] DNS LOOKUP"
+echo "[06] FILE HASH CHECK"
+echo "[07] RUNNING PROCESSES"
+echo "[00] EXIT"
+echo
+read -p "root@lust-dark:~# " choice
+
+case $choice in
+01|1) system_info ;;
+02|2) network_info ;;
+03|3) public_ip ;;
+04|4) ping_test ;;
+05|5) dns_lookup ;;
+06|6) file_hash ;;
+07|7) process_view ;;
+00|0) clear; exit ;;
+*) echo "INVALID OPTION"; sleep 1 ;;
+esac
+
+done
