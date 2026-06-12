@@ -1,22 +1,32 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# COLORS
 GREEN='\033[1;32m'
+RED='\033[1;31m'
+BLUE='\033[1;34m'
+PURPLE='\033[1;35m'
+CYAN='\033[1;36m'
+YELLOW='\033[1;33m'
+WHITE='\033[1;37m'
 NC='\033[0m'
 
 banner() {
 clear
-echo -e "${GREEN}"
+echo -e "${RED}"
 echo "██╗     ██╗   ██╗███████╗████████╗"
 echo "██║     ██║   ██║██╔════╝╚══██╔══╝"
+echo -e "${PURPLE}"
 echo "██║     ██║   ██║███████╗   ██║"
 echo "██║     ██║   ██║╚════██║   ██║"
+echo -e "${BLUE}"
 echo "███████╗╚██████╔╝███████║   ██║"
 echo "╚══════╝ ╚═════╝ ╚══════╝   ╚═╝"
+
 echo ""
-echo "      LUST DARK SUITE V3"
-echo "      SECURITY TERMINAL"
-echo "================================"
-echo -e "${NC}"
+echo -e "${CYAN}        LUST DAR V3"
+echo -e "${YELLOW}      SECURITY TERMINAL"
+echo -e "${GREEN}        POWERED BY LUST DEV"
+echo -e "${WHITE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 }
 
 pause() {
@@ -25,35 +35,35 @@ read -p "PRESS ENTER TO CONTINUE..."
 
 system_info() {
 banner
-echo -e "${GREEN}[SYSTEM INFORMATION]"
+echo -e "${GREEN}[ SYSTEM INFORMATION ]${NC}"
 uname -a
 echo
 df -h
 echo
 free -h 2>/dev/null || echo "MEMORY INFO NOT AVAILABLE"
-echo -e "${NC}"
 pause
 }
 
 network_info() {
 banner
-echo -e "${GREEN}[NETWORK INFORMATION]"
-ip addr 2>/dev/null || ifconfig
-echo -e "${NC}"
+echo -e "${BLUE}[ NETWORK INFORMATION ]${NC}"
+ip addr
+echo
+ip route
 pause
 }
 
 public_ip() {
 banner
-echo -e "${GREEN}[PUBLIC IP]"
+echo -e "${CYAN}[ PUBLIC IP ]${NC}"
 curl -s https://api.ipify.org
 echo
-echo -e "${NC}"
 pause
 }
 
 ping_test() {
 banner
+echo -e "${YELLOW}[ CONNECTION TEST ]${NC}"
 read -p "HOST OR IP: " host
 ping -c 4 "$host"
 pause
@@ -61,6 +71,7 @@ pause
 
 dns_lookup() {
 banner
+echo -e "${PURPLE}[ DNS LOOKUP ]${NC}"
 read -p "DOMAIN: " domain
 nslookup "$domain"
 pause
@@ -68,6 +79,7 @@ pause
 
 file_hash() {
 banner
+echo -e "${GREEN}[ SHA256 HASH CHECK ]${NC}"
 read -p "FILE PATH: " file
 sha256sum "$file"
 pause
@@ -75,6 +87,7 @@ pause
 
 process_view() {
 banner
+echo -e "${RED}[ RUNNING PROCESSES ]${NC}"
 ps -A
 pause
 }
@@ -84,15 +97,16 @@ do
 banner
 
 echo -e "${GREEN}[01] SYSTEM INFORMATION"
-echo "[02] NETWORK INFORMATION"
-echo "[03] PUBLIC IP CHECK"
-echo "[04] CONNECTION TEST"
-echo "[05] DNS LOOKUP"
-echo "[06] FILE HASH CHECK"
-echo "[07] RUNNING PROCESSES"
-echo "[00] EXIT"
+echo -e "${BLUE}[02] NETWORK INFORMATION"
+echo -e "${CYAN}[03] PUBLIC IP CHECK"
+echo -e "${YELLOW}[04] CONNECTION TEST"
+echo -e "${PURPLE}[05] DNS LOOKUP"
+echo -e "${WHITE}[06] FILE HASH CHECK"
+echo -e "${RED}[07] RUNNING PROCESSES"
+echo -e "${GREEN}[00] EXIT${NC}"
+
 echo
-read -p "root@lust-dark:~# " choice
+read -p "LUST@DAR ➜ " choice
 
 case $choice in
 01|1) system_info ;;
@@ -102,8 +116,16 @@ case $choice in
 05|5) dns_lookup ;;
 06|6) file_hash ;;
 07|7) process_view ;;
-00|0) clear; exit ;;
-*) echo "INVALID OPTION"; sleep 1 ;;
+00|0)
+clear
+echo -e "${RED}SHUTTING DOWN LUST DAR...${NC}"
+sleep 1
+exit
+;;
+*)
+echo -e "${RED}INVALID OPTION${NC}"
+sleep 1
+;;
 esac
 
 done
