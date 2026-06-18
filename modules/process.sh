@@ -1,11 +1,5 @@
 process_view() {
-clear
-echo "════════════════════"
-echo "  PROCESS MONITOR"
-echo "════════════════════"
-
+echo -e "${PURPLE}[ RUNNING PROCESSES ]${NC}"
 ps -A
-
-echo
-read -p "Press ENTER to return..."
+read -p "ENTER to return..."
 }
