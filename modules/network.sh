@@ -1,17 +1,7 @@
 network_info() {
-clear
-echo "════════════════════"
-echo "  NETWORK STATUS"
-echo "════════════════════"
-
-echo
-echo "[ IP ADDRESS ]"
+echo -e "${BLUE}[ NETWORK INFO ]${NC}"
 ip addr
-
 echo
-echo "[ ROUTES ]"
 ip route
-
-echo
-read -p "Press ENTER to return..."
+read -p "ENTER to return..."
 }
