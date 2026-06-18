@@ -1,13 +1,6 @@
 dns_lookup() {
-clear
-echo "════════════════════"
-echo "    DNS LOOKUP"
-echo "════════════════════"
-
-read -p "Domain: " domain
-
+echo -e "${CYAN}[ DNS LOOKUP ]${NC}"
+read -p "DOMAIN: " domain
 nslookup "$domain"
-
-echo
-read -p "Press ENTER to return..."
+read -p "ENTER to return..."
 }
