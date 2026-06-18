@@ -1,18 +1,9 @@
-#!/data/data/com.termux/files/usr/bin/bash
-
 system_info() {
-echo "=========================="
-echo "      SYSTEM STATUS"
-echo "=========================="
-
-echo
-echo "[KERNEL]"
+echo -e "${GREEN}[ SYSTEM INFO ]${NC}"
 uname -a
-
 echo
-echo "[STORAGE]"
 df -h
-
 echo
-read -p "Press ENTER to return..."
+free -h 2>/dev/null
+read -p "ENTER to return..."
 }
