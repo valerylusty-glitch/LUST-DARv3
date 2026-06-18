@@ -1,13 +1,6 @@
-hash_check() {
-clear
-echo "════════════════════"
-echo "   SHA256 CHECK"
-echo "════════════════════"
-
-read -p "File path: " file
-
+file_hash() {
+echo -e "${YELLOW}[ FILE HASH SHA256 ]${NC}"
+read -p "FILE PATH: " file
 sha256sum "$file"
-
-echo
-read -p "Press ENTER to return..."
+read -p "ENTER to return..."
 }
