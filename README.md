@@ -1,64 +1,45 @@
-# 🔥 LUST DAR V3
+# 🔥 LUST DAR V4
 
-<div align="center">
+## ⚡ CYBER CORE TERMINAL
 
-```text
-██╗     ██╗   ██╗███████╗████████╗
-██║     ██║   ██║██╔════╝╚══██╔══╝
-██║     ██║   ██║███████╗   ██║
-██║     ██║   ██║╚════██║   ██║
-███████╗╚██████╔╝███████║   ██║
-╚══════╝ ╚═════╝ ╚══════╝   ╚═╝
-```
-
-### SECURITY TERMINAL
-### Powered By LUST DEV
-
-</div>
+LUST DAR V4 is a modular cyber terminal built for system, network and security utilities.
 
 ---
 
-## 📌 DESCRIPTION
+## 🚀 FEATURES
 
-LUST DAR V3 is a modular terminal utility designed for system and network information.
-
----
-
-## ⚡ FEATURES
-
-- 🖥️ System information
-- 🌐 Network information
-- 🌍 Public IP checker
-- 📡 Connection test (Ping)
-- 🔎 DNS lookup
-- 🔐 SHA256 file hash checker
-- ⚙️ Running process viewer
-- 🎨 Multicolor terminal interface
-- 🧩 Modular structure
+- System Information
+- Network Scanner
+- DNS Lookup Tool
+- File Hash Checker (SHA256)
+- Process Viewer
+- Modular Architecture
+- Clean Cyber UI
 
 ---
 
-## 🛠 INSTALLATION
+## 🧠 ARCHITECTURE
 
-Clone the repository:
-
-```bash
-git clone https://github.com/valerylusty-glitch/LUST-DARv3.git
+```
+core/ → engine (boot, menu, config)
+modules/ → tools
+config/ → settings
 ```
 
-Enter the folder:
+---
+
+## 📦 INSTALLATION
 
 ```bash
-cd LUST-DARv3
-```
-
-Give permission:
-
-```bash
+git clone https://github.com/yourrepo/LUST-DAR.git
+cd LUST-DAR
 chmod +x lust-dar
+./lust-dar
 ```
 
-Run LUST DAR:
+---
+
+## ⚙️ USAGE
 
 ```bash
 ./lust-dar
@@ -66,50 +47,12 @@ Run LUST DAR:
 
 ---
 
-## 📁 PROJECT STRUCTURE
+## 🔮 VERSION
 
-```text
-LUST-DARv3/
-│
-├── lust-dar
-├── modules/
-│   ├── system.sh
-│   ├── network.sh
-│   ├── dns.sh
-│   ├── hash.sh
-│   └── process.sh
-│
-├── config/
-├── assets/
-├── docs/
-├── CHANGELOG.md
-└── README.md
-```
+V4.0 - CYBER CORE EDITION
 
 ---
 
-## 🚀 ROADMAP
+## 👑 AUTHOR
 
-### V3.1
-- Animated boot system
-- Theme manager
-- Settings menu
-- Auto update
-- Better customization
-
-### V4
-- More modules
-- Plugin system
-- Improved UI
-
----
-
-## 📜 LICENSE
-
-Open source project by **LUST DEV**.
-
----
-
-## ⭐ SUPPORT
-
-If you like LUST DAR, give this repository a ⭐ on GitHub.
+LUST DEV
